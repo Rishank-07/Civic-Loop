@@ -8,6 +8,7 @@ from backend.app.models.task import Task
 from backend.app.models.approval import Approval
 from backend.app.models.knowledge import KnowledgeChunk
 from backend.app.models.ai_call import AICall
+from backend.app.models.notification import Notification
 
 __all__ = [
     "Base",
@@ -21,5 +22,6 @@ __all__ = [
     "Approval",
     "KnowledgeChunk",
     "AICall",
+    "Notification",
 ]
 

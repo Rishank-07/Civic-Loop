@@ -7,7 +7,7 @@ from backend.app.models.custom_types import CompatibleJSON
 
 class Task(Base):
     """
-    Background tasks table ensuring idempotency and retry semantics.
+    Background tasks table ensuring idempotency, retry semantics, and lease-based crash recovery.
     """
     __tablename__ = "tasks"
 
@@ -21,6 +21,7 @@ class Task(Base):
         index=True,
     )  # PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED
     run_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
+    locked_at = Column(DateTime, nullable=True)
     attempts = Column(Integer, default=0, nullable=False)
     max_attempts = Column(Integer, default=3, nullable=False)
     idempotency_key = Column(String(255), unique=True, nullable=False, index=True)

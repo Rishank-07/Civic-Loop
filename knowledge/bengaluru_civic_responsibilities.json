@@ -1,0 +1,74 @@
+[
+  {
+    "id": "KB-BBMP-SWM-01",
+    "title": "BBMP Solid Waste Management & Garbage Blackspot Protocols",
+    "department": "BBMP Solid Waste Management (SWM)",
+    "jurisdiction": "Bruhat Bengaluru Mahanagara Palike (All 8 Zones / 198+ Wards)",
+    "source_url": "https://bbmp.gov.in/swm-byelaws-2020",
+    "last_verified": "2026-01-15T00:00:00Z",
+    "content": "BBMP SWM Bye-Laws (2020) mandate door-to-door segregated collection of wet, dry, and sanitary waste across all wards. For garbage blackspots and uncollected roadside piles, complaints logged on BBMP Sahaaya 2.0 carry an official resolution target of 24 to 48 hours. Primary operational responsibility lies with the Ward Junior Health Inspector (JHI) and Assistant Executive Engineer (AEE). If chronic commercial dumping exceeds 500kg, mechanical bobcat loaders are deployed. All portal closures require supervisor geo-stamped receipts.",
+    "escalation_level": "Level 1: Ward Junior Health Inspector -> Level 2: Sub-Division AEE -> Level 3: Joint Commissioner (SWM)",
+    "statutory_reference": "BBMP Solid Waste Management Bye-laws 2020; SWM Rules 2016 (MoEFCC)",
+    "uncertainty_note": "Ward-level contractor contact details are subject to periodic tender renewals and marked 'to be verified'."
+  },
+  {
+    "id": "KB-BBMP-SWD-02",
+    "title": "Stormwater Drain (Raja Kaluve) vs Underground Sewerage (BWSSB) Responsibility",
+    "department": "BBMP Storm Water Drains (SWD) & BWSSB",
+    "jurisdiction": "Bengaluru Urban (BBMP SWD Central Division & BWSSB Maintenance Sub-divisions)",
+    "source_url": "https://bbmp.gov.in/swd-guidelines-2024",
+    "last_verified": "2026-02-01T00:00:00Z",
+    "content": "Open stormwater drains (Primary / Secondary / Tertiary Raja Kaluves) are maintained by the BBMP SWD division for rainwater conveyance. Underground sewage pipes, manholes, chamber overflows, and contamination of stormwater drains with domestic blackwater fall strictly under the Bangalore Water Supply and Sewerage Board (BWSSB) under the BWSSB Act 1964. Roadside open culverts are desilted by the local BBMP Zonal Road/SWD team (SLA 48 hours for clearing choking silt). Where sewage cross-connection is observed, a formal inter-departmental referral to BWSSB Executive Engineer is required.",
+    "escalation_level": "Level 1: BBMP Ward AEE / BWSSB Assistant Engineer -> Level 2: BBMP Chief Engineer (SWD) / BWSSB Chief Engineer (Maintenance)",
+    "statutory_reference": "KMC Act 1976 Sections 288-295; BWSSB Act 1964 Section 15",
+    "uncertainty_note": "Joint survey protocols between BBMP and BWSSB for disputed culvert contamination marked 'to be verified'."
+  },
+  {
+    "id": "KB-BBMP-ROADS-03",
+    "title": "Road Maintenance, Potholes & Arterial vs Ward Road Jurisdiction",
+    "department": "BBMP Road Infrastructure / Major Roads Division",
+    "jurisdiction": "Bengaluru Urban Arterial & Ward Roads",
+    "source_url": "https://bbmp.gov.in/road-infrastructure-sop",
+    "last_verified": "2026-01-20T00:00:00Z",
+    "content": "Interior residential roads (width < 60 feet) are maintained by the BBMP Zonal Executive Engineers. Major arterial and sub-arterial corridors (such as Outer Ring Road, 100 Feet Road Indiranagar, Hosur Road up to Silk Board) are maintained by the BBMP Major Roads Division. National Highways passing through Bengaluru (e.g. NH-44, NH-75) fall under NHAI jurisdiction. Pothole repairs registered via BBMP FixMyStreet carry a 48-hour target under the Karnataka Sakala Guarantee of Services Act 2011.",
+    "escalation_level": "Level 1: Ward AEE -> Level 2: Executive Engineer (Major Roads) -> Level 3: Chief Engineer (Road Infrastructure)",
+    "statutory_reference": "Karnataka Sakala Services Act 2011 (Service No. 182); KMC Act 1976",
+    "uncertainty_note": "Jurisdiction handoff boundaries between BBMP and NHAI near elevated flyovers marked 'to be verified'."
+  },
+  {
+    "id": "KB-BESCOM-PWR-04",
+    "title": "BESCOM Electrical Hazards, Streetlight Feeder Panels & Safety Protocol",
+    "department": "Bangalore Electricity Supply Company Limited (BESCOM)",
+    "jurisdiction": "Bengaluru Metropolitan Area (BESCOM 4 Circles: North, South, East, West)",
+    "source_url": "https://bescom.karnataka.gov.in/safety-guidelines",
+    "last_verified": "2026-02-10T00:00:00Z",
+    "content": "Submerged distribution transformers, open junction boxes, exposed underground cables, and hanging live wires pose critical public safety hazards during flooding or heavy rains. Citizens can lodge grievances via the BESCOM 24x7 helpline 'Namma 1912' or WhatsApp grievance bot. Emergency hazardous wire containment SLA is 2 hours. Physical streetlight luminaires and poles are maintained by BBMP Electrical Division, while electrical power feeding the panel is the responsibility of BESCOM.",
+    "escalation_level": "Level 1: BESCOM Section Officer (O&M) -> Level 2: Assistant Executive Engineer (Sub-division) -> Level 3: Executive Engineer (Division)",
+    "statutory_reference": "Central Electricity Authority (Measures relating to Safety and Electric Supply) Regulations 2010",
+    "uncertainty_note": "Specific ward-level lineman roster phone numbers change dynamically and are marked 'to be verified'."
+  },
+  {
+    "id": "KB-GRIEVANCE-PORTALS-05",
+    "title": "Official Public Grievance Redressal Channels & Cross-Portal Mapping",
+    "department": "Government of Karnataka / BBMP / DPAR",
+    "jurisdiction": "Bengaluru City Grievance Redressal",
+    "source_url": "https://sakala.kar.nic.in",
+    "last_verified": "2026-02-15T00:00:00Z",
+    "content": "Civic grievances in Bengaluru can originate from multiple official channels: (1) BBMP Sahaaya 2.0 (web & mobile), (2) MoHUA Swachhata App for municipal sanitation and garbage, (3) BESCOM Namma 1912 for electrical and streetlight power faults, (4) BWSSB Sahayaa for drinking water and sewerage leaks, and (5) Karnataka Sakala Portal (IPGRS). When a complaint is closed on one portal, CivicLoop links the case across systems to ensure that closure in one portal does not prematurely terminate ongoing citizen oversight.",
+    "escalation_level": "Sakala Appellate Authority (30-day escalation if unresolved)",
+    "statutory_reference": "Karnataka Guarantee of Services to Citizens Act (Sakala), 2011",
+    "uncertainty_note": "Integration status of unified IPGRS portal API endpoints is currently marked 'to be verified'."
+  },
+  {
+    "id": "KB-REV-BDA-PROP-06",
+    "title": "Property Tax Jurisdiction, A-Khata / B-Khata & BBMP vs BDA / Gram Panchayat Boundaries",
+    "department": "BBMP Revenue Department & Bangalore Development Authority (BDA)",
+    "jurisdiction": "BBMP 198 Wards & BDA Layouts / 110 Villages Peripheral Area",
+    "source_url": "https://bbmp.gov.in/revenue-guidelines-2023",
+    "last_verified": "2026-02-18T00:00:00Z",
+    "content": "Property jurisdiction in Bengaluru is strictly segregated between BBMP Revenue Department (for properties within the 198 municipal wards with A-Khata or B-Khata register entries) and the Bangalore Development Authority (BDA) for un-handed over layouts (e.g. Arkavathy, Anjanapura, Nadaprabhu Kempegowda). Peripheral 110 villages absorbed under BBMP in 2007 fall under BBMP Revenue for property tax, but layout sanction and civic amenities in private layouts require checking whether the layout was approved by BDA, BMRDA, or erstwhile Gram Panchayats. Unauthorised layout encroachments and betterment fees must be directed to BBMP Assistant Revenue Officer (ARO) or BDA Town Planning.",
+    "escalation_level": "Level 1: Ward ARO -> Level 2: Deputy Commissioner (Revenue) -> Level 3: Special Commissioner (Revenue)",
+    "statutory_reference": "Karnataka Municipal Corporations Act 1976 / Bruhat Bengaluru Mahanagara Palike Act 2020; BDA Act 1976",
+    "uncertainty_note": "Status of B-Khata property regularisation scheme (Akrama-Sakrama) is subject to ongoing Supreme Court proceedings and marked 'to be verified'."
+  }
+]
