@@ -1,0 +1,72 @@
+[
+  {
+    "ward_number": 150,
+    "ward_name": "Bellandur",
+    "zone": "Mahadevapura",
+    "assembly_constituency": "Mahadevapura",
+    "jurisdiction": "BBMP / Greater Bengaluru Authority",
+    "nodal_officers": {
+      "aee_swd": "Assistant Executive Engineer (Storm Water Drains), Mahadevapura Division",
+      "aee_road_infra": "Assistant Executive Engineer (Road Infrastructure), Mahadevapura",
+      "jhi_swm": "Junior Health Inspector (Solid Waste Management), Ward 150",
+      "contact_email": "aee.swd.mahadevapura@bbmp.gov.in"
+    },
+    "key_landmarks": [
+      "Green Glen Layout",
+      "Bellandur Lake Outflow Channel",
+      "Outer Ring Road Junction",
+      "Ecospace Culvert"
+    ],
+    "critical_issues": [
+      "Commercial dumping along storm water canal buffer",
+      "Silt accumulation blocking Bellandur lake feeder canal",
+      "Mixed construction debris near secondary storm water drains"
+    ]
+  },
+  {
+    "ward_number": 112,
+    "ward_name": "Domlur",
+    "zone": "East",
+    "assembly_constituency": "Shantinagar",
+    "jurisdiction": "BBMP / Greater Bengaluru Authority",
+    "nodal_officers": {
+      "aee_swd": "Assistant Executive Engineer (SWD), East Zone",
+      "aee_road_infra": "AEE (Domlur Sub-Division)",
+      "jhi_swm": "Junior Health Inspector, Ward 112",
+      "contact_email": "aee.domlur@bbmp.gov.in"
+    },
+    "key_landmarks": [
+      "100 Feet Road Intermediate Ring Road Junction",
+      "EGL Canal Culvert",
+      "Domlur BDA Complex",
+      "Old Airport Road drain interceptor"
+    ],
+    "critical_issues": [
+      "Blocked primary SWD (Raja Kaluve) carrying discharge towards Challaghatta valley",
+      "Street drain desilting backlog leading to road flash floods"
+    ]
+  },
+  {
+    "ward_number": 174,
+    "ward_name": "HSR Layout",
+    "zone": "Bommanahalli",
+    "assembly_constituency": "Bommanahalli",
+    "jurisdiction": "BBMP / Greater Bengaluru Authority",
+    "nodal_officers": {
+      "aee_swd": "Assistant Executive Engineer (SWD), Bommanahalli",
+      "aee_road_infra": "AEE (HSR Sub-Division)",
+      "jhi_swm": "Junior Health Inspector, Ward 174",
+      "contact_email": "aee.hsr@bbmp.gov.in"
+    },
+    "key_landmarks": [
+      "Sector 3 14th Main Park",
+      "27th Main Commercial Corridor",
+      "Agara Lake Feeder Drain",
+      "Sector 1 Secondary Storm Water Drain"
+    ],
+    "critical_issues": [
+      "Night commercial waste dumping (blackspots)",
+      "Secondary drain blockages from plastic packaging"
+    ]
+  }
+]

@@ -1,0 +1,104 @@
+services:
+  # ==============================================================================
+  # PostgreSQL with pgvector extension enabled
+  # ==============================================================================
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: civicloop-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: civicloop
+      POSTGRES_PASSWORD: civicloop_secret
+      POSTGRES_DB: civicloop_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U civicloop -d civicloop_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ==============================================================================
+  # FastAPI Modular Monolith Backend
+  # Automatically runs Alembic migrations and Bengaluru seed script on startup
+  # ==============================================================================
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: civicloop-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg2://civicloop:civicloop_secret@postgres:5432/civicloop_db
+      SECRET_KEY: civicloop-insecure-secret-key-change-in-production-2026
+      ENVIRONMENT: development
+      LLM_BASE_URL: http://ollama:11434/v1
+      LLM_API_KEY: ollama-key
+      LLM_AGENT_MODEL: deepseek-ai/DeepSeek-V4
+      LLM_VISION_MODEL: Qwen/Qwen3.6-VL
+      EMBED_MODEL: BAAI/bge-m3
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # ==============================================================================
+  # CivicLoop Background Task Worker
+  # Processes retries, external sync, and dispute audits
+  # ==============================================================================
+  worker:
+    build:
+      context: .
+      dockerfile: worker/Dockerfile
+    container_name: civicloop-worker
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg2://civicloop:civicloop_secret@postgres:5432/civicloop_db
+      SECRET_KEY: civicloop-insecure-secret-key-change-in-production-2026
+      ENVIRONMENT: development
+      LLM_BASE_URL: http://ollama:11434/v1
+      LLM_API_KEY: ollama-key
+      LLM_AGENT_MODEL: deepseek-ai/DeepSeek-V4
+      LLM_VISION_MODEL: Qwen/Qwen3.6-VL
+      EMBED_MODEL: BAAI/bge-m3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      backend:
+        condition: service_started
+
+  # ==============================================================================
+  # React + Vite + TypeScript Frontend
+  # ==============================================================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: civicloop-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  # ==============================================================================
+  # Optional Open-Weight Model Runner (Ollama)
+  # Run with: docker compose --profile local-llm up
+  # ==============================================================================
+  ollama:
+    image: ollama/ollama:latest
+    container_name: civicloop-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    profiles:
+      - local-llm
+
+volumes:
+  postgres_data:
+  ollama_data:

@@ -1,0 +1,31 @@
+{
+  "statute": "Karnataka Sakala Services Act, 2011",
+  "authority": "Government of Karnataka / Department of Personnel and Administrative Reforms",
+  "statutory_guarantees": [
+    {
+      "service_code": "BBMP-SWM-001",
+      "service_name": "Clearance of roadside solid waste / blackspot clearance",
+      "stipulated_time_limit_hours": 24,
+      "competent_officer": "Junior Health Inspector",
+      "first_appellate_authority": "Assistant Executive Engineer (SWM)",
+      "second_appellate_authority": "Joint Commissioner of Zone"
+    },
+    {
+      "service_code": "BBMP-SWD-002",
+      "service_name": "Removal of silt and obstruction in roadside drain / SWD",
+      "stipulated_time_limit_hours": 48,
+      "competent_officer": "Assistant Executive Engineer (SWD / Ward Works)",
+      "first_appellate_authority": "Executive Engineer",
+      "second_appellate_authority": "Chief Engineer (SWD)"
+    },
+    {
+      "service_code": "BWSSB-SAN-003",
+      "service_name": "Clearance of sewage overflow into storm water drain",
+      "stipulated_time_limit_hours": 24,
+      "competent_officer": "Assistant Executive Engineer (BWSSB Sub-Division)",
+      "first_appellate_authority": "Executive Engineer (BWSSB)",
+      "second_appellate_authority": "Chief Engineer (Maintenance)"
+    }
+  ],
+  "default_penalty": "Under Sakala Section 7, designated officer failing to provide service without reasonable cause is liable to pay compensatory cost of Rs. 20 per day up to Rs. 500."
+}
