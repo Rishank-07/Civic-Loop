@@ -126,6 +126,69 @@ class ApiClient {
     if (!res.ok) throw new Error('Failed to append complaint record');
     return res.json();
   }
+
+  async getAIHealth() {
+    const res = await fetch('/api/ai/health');
+    if (!res.ok) return { status: 'unknown', agent_model: 'DeepSeek V4', vision_model: 'Qwen 3.6 VL', embed_model: 'BGE-M3' };
+    return res.json();
+  }
+
+  async extractFromText(text: string) {
+    const res = await fetch(`${API_BASE}/ai/extract/text`, {
+      method: 'POST',
+      headers: this.getHeaders(),
+      body: JSON.stringify({ text }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.detail || 'Extraction failed');
+    }
+    return res.json();
+  }
+
+  async extractFromScreenshot(imageUrl: string) {
+    const res = await fetch(`${API_BASE}/ai/extract/screenshot`, {
+      method: 'POST',
+      headers: this.getHeaders(),
+      body: JSON.stringify({ image_url: imageUrl }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.detail || 'Vision extraction failed');
+    }
+    return res.json();
+  }
+
+  async findCaseLinks(payload: {
+    category: string;
+    location_text: string;
+    lat?: number;
+    lng?: number;
+    ward?: string;
+  }) {
+    const res = await fetch(`${API_BASE}/case-linking/find-links`, {
+      method: 'POST',
+      headers: this.getHeaders(),
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error('Failed to search candidate cases');
+    return res.json();
+  }
+
+  async linkComplaintToCase(complaintId: number, targetCaseId: number, reason?: string) {
+    const res = await fetch(`${API_BASE}/case-linking/link-complaint`, {
+      method: 'POST',
+      headers: this.getHeaders(),
+      body: JSON.stringify({
+        complaint_id: complaintId,
+        target_case_id: targetCaseId,
+        reason,
+      }),
+    });
+    if (!res.ok) throw new Error('Failed to link complaint to case');
+    return res.json();
+  }
 }
 
 export const api = new ApiClient();
+

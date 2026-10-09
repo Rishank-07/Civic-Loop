@@ -26,11 +26,24 @@ export const App: React.FC = () => {
   const [transitioning, setTransitioning] = useState(false);
   const [disputeModalOpen, setDisputeModalOpen] = useState(false);
   const [disputeReason, setDisputeReason] = useState('');
+  const [aiHealth, setAiHealth] = useState<{
+    status?: string;
+    agent_model?: string;
+    vision_model?: string;
+    embed_model?: string;
+  }>({
+    status: 'healthy',
+    agent_model: 'DeepSeek V4',
+    vision_model: 'Qwen 3.6 VL',
+    embed_model: 'BGE-M3',
+  });
 
   // Initial load and authentication
   useEffect(() => {
     switchUser('CITIZEN');
+    api.getAIHealth().then((h) => setAiHealth(h)).catch(() => {});
   }, []);
+
 
   const switchUser = async (role: 'CITIZEN' | 'OFFICER' | 'ADMIN') => {
     setLoading(true);
@@ -456,6 +469,47 @@ export const App: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Open-Weight AI Model Footer */}
+      <footer
+
+        style={{
+          borderTop: '1px solid var(--border-subtle)',
+          background: 'rgba(9, 13, 22, 0.95)',
+          padding: '16px 28px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          fontSize: '0.78rem',
+          color: 'var(--text-muted)',
+          marginTop: 'auto',
+          zIndex: 40,
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <span
+            style={{
+              display: 'inline-block',
+              width: '8px',
+              height: '8px',
+              borderRadius: '50%',
+              background: aiHealth.status === 'healthy' ? '#10b981' : '#f59e0b',
+              boxShadow: aiHealth.status === 'healthy' ? '0 0 8px #10b981' : '0 0 8px #f59e0b',
+            }}
+          />
+          <span>
+            <strong style={{ color: 'var(--text-main)' }}>Open-Weight AI Stack:</strong>{' '}
+            Agent: <span style={{ color: '#38bdf8' }}>{aiHealth.agent_model || 'DeepSeek V4'}</span> • Vision:{' '}
+            <span style={{ color: '#a78bfa' }}>{aiHealth.vision_model || 'Qwen 3.6 VL'}</span> • Embeddings:{' '}
+            <span style={{ color: '#34d399' }}>{aiHealth.embed_model || 'BGE-M3'}</span>
+          </span>
+        </div>
+        <div style={{ display: 'flex', gap: '16px' }}>
+          <span>Track: PS03 Open-Source AI Agent</span>
+          <span style={{ color: 'var(--text-dim)' }}>Strictly Zero Proprietary API Dependencies</span>
+        </div>
+      </footer>
     </div>
   );
 };
+

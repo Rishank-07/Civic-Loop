@@ -7,6 +7,7 @@ from backend.app.models.timeline import TimelineEvent
 from backend.app.models.task import Task
 from backend.app.models.approval import Approval
 from backend.app.models.knowledge import KnowledgeChunk
+from backend.app.models.ai_call import AICall
 
 __all__ = [
     "Base",
@@ -19,4 +20,6 @@ __all__ = [
     "Task",
     "Approval",
     "KnowledgeChunk",
+    "AICall",
 ]
+

@@ -51,3 +51,10 @@ def health_check():
             "embed": settings.EMBED_MODEL,
         },
     }
+
+
+@app.get("/api/ai/health")
+async def ai_health():
+    from backend.app.ai.llm import llm_client
+    return await llm_client.health_check()
+
